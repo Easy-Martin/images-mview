@@ -1,37 +1,30 @@
 ```javascript
 
-yarn add lm-player // or
-npm i lm-player
+yarn add images-mview
 
 //React simple demo
-import LMPlayer from 'lm-player'
-ReactDOM.render(
-  <LMPlayer
-    file={`./video.mp4?${Math.random()}`}
-    isLive={false}
-    autoplay={true}
-    loop={true}
-    poster="./poster.png"
-    onInitPlayer={player => {
-      console.log(player);
-    }}
-  />,
-  document.getElementById("root")
-);
-
-
-//other simple demo
-import LMPlayer from 'lm-player'
-const container = document.getElementById("root")
-LMPlayer.createPlayer({
-  container,
-  isLive:true,
-  file: `./video.mp4?${Math.random()}`,
-  onInitPlayer: player => {
-    console.log(player);
-  }
-});
-
+import ImagesView from 'images-mview';
+import "images-mview/es/index.css"
+function App() {
+  const [visible, setVisible] = useState(false);
+  return (
+    <div className="App">
+        <button onClick={() => setVisible(true)}>xxxx</button>
+      <ImagesView
+        className="demo-images"
+        current={2}
+        visible={visible}
+        onClose={() => setVisible(false)}
+        imageList={[
+          'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594724614876&di=1c8497dfd08f789ee3eee505c11d7511&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201303%2F23%2F124331t26mddrgddg56s2z.jpg',
+          'http://attach.bbs.miui.com/forum/201312/31/111859myvyiivetyftfz2n.jpg',
+          'http://e.hiphotos.baidu.com/zhidao/pic/item/b64543a98226cffc7a951157b8014a90f703ea9c.jpg',
+        ]}
+      />
+    </div>
+  );
+}
+ReactDOM.render(<App />, document.body)
 
 // 其他文档待补充
 ```

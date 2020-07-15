@@ -1,7 +1,6 @@
 {
   "name": "images-mview",
   "version": "0.0.1",
-  "private": true,
   "main": "es/index.js",
   "homepage": "https://github.com/Easy-Martin/images-mview",
   "dependencies": {

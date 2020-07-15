@@ -1,0 +1,7 @@
+/node_modules
+/src
+/build
+/rollup.config.*.js
+/yarn.lock
+/public
+/config-overrides.js
