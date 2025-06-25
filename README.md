@@ -34,7 +34,7 @@ npm run preview
 ```jsx
 import React, { useState } from 'react';
 import ImagesView from 'images-mview';
-import "images-mview/dist/images-mview.es.css"
+import "images-mview/lib/images-mview.es.css"
 
 function App() {
   const [visible, setVisible] = useState(false);
