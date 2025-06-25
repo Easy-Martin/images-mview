@@ -5,7 +5,7 @@ import Transform from './transform';
 import To from './to';
 import ease from './ease';
 import QueueAnim from 'rc-queue-anim';
-import './index.less';
+import './index.css';
 
 function ImageMobileView({ imageList = [], current = 0, className = '', onClose }) {
   const [index, setIndex] = useState(current);
