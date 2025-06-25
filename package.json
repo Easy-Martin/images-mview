@@ -15,7 +15,8 @@
     "build": "vite build",
     "build:lib": "vite build -m library",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.6.0",
