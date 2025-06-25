@@ -1,7 +1,0 @@
-{
-  "presets": [
-    ["@babel/env", { "targets": { "chrome": "60" } }],
-    "@babel/react"
-  ],
-  "plugins": [["@babel/plugin-proposal-decorators", { "legacy": true }]]
-}

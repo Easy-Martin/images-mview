@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import logo from './logo.svg';
 import ImagesView from './images-mview';
 import './App.css';
@@ -9,16 +9,16 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={() => setVisible(true)}>xxxx</button>
+        <button onClick={() => setVisible(true)}>图片预览</button>
       </header>
       <ImagesView
         className="demo-images"
-        current={2}
+        current={0}
         visible={visible}
         onClose={() => setVisible(false)}
         imageList={[
-          'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594724614876&di=1c8497dfd08f789ee3eee505c11d7511&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201303%2F23%2F124331t26mddrgddg56s2z.jpg',
-          'http://attach.bbs.miui.com/forum/201312/31/111859myvyiivetyftfz2n.jpg',
+          'https://img1.baidu.com/it/u=2172818577,3783888802&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=1422',
+          'https://img1.baidu.com/it/u=519717897,205069439&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=1200',
           'http://e.hiphotos.baidu.com/zhidao/pic/item/b64543a98226cffc7a951157b8014a90f703ea9c.jpg',
         ]}
       />
