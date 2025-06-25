@@ -1,30 +1,74 @@
-```javascript
+# images-mview
 
+一个基于 React 的图片查看组件，现已迁移到 Vite 构建系统。
+
+## 安装
+
+```bash
 yarn add images-mview
+# 或
+npm install images-mview
+```
 
-//React simple demo
+## 开发
+
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 构建库文件
+npm run build:lib
+
+# 构建演示应用
+npm run build
+
+# 预览构建结果
+npm run preview
+```
+
+## 使用示例
+
+```jsx
+import React, { useState } from 'react';
 import ImagesView from 'images-mview';
-import "images-mview/es/index.css"
+import "images-mview/lib/images-mview.es.css"
+
 function App() {
   const [visible, setVisible] = useState(false);
   return (
     <div className="App">
-        <button onClick={() => setVisible(true)}>xxxx</button>
+      <button onClick={() => setVisible(true)}>查看图片</button>
       <ImagesView
         className="demo-images"
         current={2}
         visible={visible}
         onClose={() => setVisible(false)}
         imageList={[
-          'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594724614876&di=1c8497dfd08f789ee3eee505c11d7511&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201303%2F23%2F124331t26mddrgddg56s2z.jpg',
-          'http://attach.bbs.miui.com/forum/201312/31/111859myvyiivetyftfz2n.jpg',
-          'http://e.hiphotos.baidu.com/zhidao/pic/item/b64543a98226cffc7a951157b8014a90f703ea9c.jpg',
+          'https://example.com/image1.jpg',
+          'https://example.com/image2.jpg',
+          'https://example.com/image3.jpg',
         ]}
       />
     </div>
   );
 }
-ReactDOM.render(<App />, document.body)
 
-// 其他文档待补充
+export default App;
 ```
+
+## 构建系统迁移
+
+项目已从 Create React App + Rollup 迁移到 Vite：
+
+- ✅ 更快的开发服务器启动
+- ✅ 热模块替换 (HMR)
+- ✅ 更快的构建速度
+- ✅ 支持 ES 模块和 UMD 格式输出
+- ✅ 内置 Less 支持
+
+## API 文档
+
+待补充...
