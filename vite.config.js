@@ -16,6 +16,19 @@ export default defineConfig(({ mode, command }) => {
             cssFileName: 'images-mview',
           }
         : undefined,
+      rollupOptions: isLib
+        ? {
+            external: ['react', 'react-dom', 'hammerjs', 'rc-queue-anim'],
+            output: {
+              globals: {
+                react: 'React',
+                'react-dom': 'ReactDOM',
+                hammerjs: 'Hammer',
+                'rc-queue-anim': 'QueueAnim',
+              },
+            },
+          }
+        : undefined,
     },
   };
 });

@@ -1,11 +1,48 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Hammer from 'hammerjs';
 import Transform from './transform';
 import To from './to';
 import ease from './ease';
 import QueueAnim from 'rc-queue-anim';
-import './index.css';
+import { css } from '@emotion/css';
+
+const imageMobileViewLayoutCss = css`
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+`;
+
+const imageViewBoxCss = css`
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  height: 100%;
+  transition: transform 0.3s;
+`;
+
+const imageItemCss = css`
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+`;
+
+const labelIndexCss = css`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 12px;
+`;
 
 function ImageMobileView({ imageList = [], current = 0, className = '', onClose }) {
   const [index, setIndex] = useState(current);
@@ -101,21 +138,21 @@ function ImageMobileView({ imageList = [], current = 0, className = '', onClose 
     return () => hammer.destroy();
   }, [imageList, onClose, index]);
   return (
-    <div className={`image-mobile-view-layout ${className}`} ref={domRef}>
+    <div className={imageMobileViewLayoutCss} ref={domRef}>
       <div
-        className="image-view-box"
+        className={imageViewBoxCss}
         style={{
           transform: `translateX(-${index * document.body.clientWidth}px)`,
           width: `${imageList.length * 100}%`,
         }}
       >
         {imageList.map((v, i) => (
-          <div className="image-item" key={i}>
+          <div className={`${imageItemCss} image-item`} key={i}>
             <img src={v} alt="" />
           </div>
         ))}
       </div>
-      <span className="label-index">
+      <span className={labelIndexCss}>
         {index + 1} / {imageList.length}
       </span>
     </div>

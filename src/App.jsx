@@ -1,14 +1,37 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import ImagesView from './images-mview';
-import './App.css';
+import { css } from '@emotion/css';
+
+const appStyle = css`
+  text-align: center;
+`;
+
+const appHeaderStyle = css`
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
+
+const appLogoStyle = css`
+  height: 40vmin;
+  pointer-events: none;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: App-logo-spin infinite 20s linear;
+  }
+`;
 
 function App() {
   const [visible, setVisible] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className={appStyle}>
+      <header className={appHeaderStyle}>
+        <img src={logo} className={appLogoStyle} alt="logo" />
         <button onClick={() => setVisible(true)}>图片预览</button>
       </header>
       <ImagesView
